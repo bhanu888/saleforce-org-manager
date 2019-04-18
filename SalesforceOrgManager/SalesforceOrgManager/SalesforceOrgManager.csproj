@@ -226,6 +226,7 @@
   <ItemGroup>
     <Content Include="ExternalDll\SfMetadata.dll" />
     <Content Include="ExternalDll\SfTooling.dll" />
+    <Content Include="img\ajax-loader.gif" />
     <Content Include="img\ambulance.png" />
     <Content Include="img\antenna.png" />
     <Content Include="img\api.png" />

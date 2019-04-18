@@ -65,6 +65,7 @@
             this.btnDeployToServer = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnDeployConnections = new System.Windows.Forms.PictureBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnNewStaticResource)).BeginInit();
@@ -298,7 +299,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(160, 678);
+            this.tabPage2.Size = new System.Drawing.Size(160, 611);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "L";
             // 
@@ -408,7 +409,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(160, 678);
+            this.tabPage3.Size = new System.Drawing.Size(160, 611);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "T";
             // 
@@ -472,7 +473,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 34);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(160, 678);
+            this.tabPage4.Size = new System.Drawing.Size(160, 611);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "D";
             // 
@@ -548,12 +549,22 @@
             this.btnDeployConnections.TabStop = false;
             this.btnDeployConnections.Click += new System.EventHandler(this.btnDeployConnections_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(236, 257);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(356, 23);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.TabIndex = 6;
+            this.progressBar1.Visible = false;
+            // 
             // OrgTree
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(635, 649);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnSelectNone);
             this.Controls.Add(this.btnSelectAll);
@@ -629,5 +640,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox btnApiUsage;
         public System.Windows.Forms.TreeView treeView;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

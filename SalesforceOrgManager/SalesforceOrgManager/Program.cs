@@ -103,7 +103,7 @@ namespace SalesforceOrgManager
             if (!Directory.Exists(ShoppingList.triggersRootDir)) {Directory.CreateDirectory(ShoppingList.triggersRootDir);}
             if (!Directory.Exists(ShoppingList.staticResourcesRootDir)) {Directory.CreateDirectory(ShoppingList.staticResourcesRootDir);}
             if (!Directory.Exists(ShoppingList.auraRootDir)) {Directory.CreateDirectory(ShoppingList.auraRootDir);}
-            if (!Directory.Exists(ShoppingList.lwcRootDir)) { Directory.CreateDirectory(ShoppingList.lwcRootDir); }
+            if (!Directory.Exists(ShoppingList.lwcRootDir)) {Directory.CreateDirectory(ShoppingList.lwcRootDir);}
 
             string[] classFiles = Directory.GetFiles(ShoppingList.classesRootDir);
             string[] pageFiles = Directory.GetFiles(ShoppingList.pagesRootDir);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using SalesforceOrgManager.Model;
 
@@ -15,7 +16,7 @@ namespace SalesforceOrgManager.View
             InitializeComponent();
             tabControl1.DrawItem += new DrawItemEventHandler(tabControl1_DrawItem);
 
-            this.treeView.AfterCheck += TreeView_AfterCheck;
+            treeView.AfterCheck += TreeView_AfterCheck;
             this.Text = ShoppingList.projectName;
             refreshMetadataIndex();
         }
@@ -61,7 +62,7 @@ namespace SalesforceOrgManager.View
             {
                 if (treeView.Nodes["mainNode"].Tag.Equals("_TESTCLASSES"))
                 {
-                    this.treeView.Nodes.Clear();
+                    treeView.Nodes.Clear();
                     refreshMetadataIndex();
                 }
                 toggleFormButtonsVisibility(true);
@@ -90,8 +91,21 @@ namespace SalesforceOrgManager.View
         // PROJECT CONTENT METHODS -- START ---------------------
         private void btnRefreshMetadata_Click(object sender, EventArgs e)
         {
-            this.treeView.Nodes.Clear();
-            refreshMetadataIndex();
+            //treeView.Nodes.Clear();
+            //refreshMetadataIndex();
+            refreshMetadataIndexAsyncCaller();
+        }
+        private async void refreshMetadataIndexAsyncCaller()
+        {
+            progressBar1.Visible = true;
+            progressBar1.Increment(50);
+            treeView.Visible = false;
+            treeView.Nodes.Clear();
+            TreeNode tn = await Task<TreeNode>.Run(() => refreshMetadataIndexAsync());
+            treeView.Nodes.Add(tn);
+            treeView.Visible = true;
+            progressBar1.Visible = false;
+            progressBar1.Value = 0;
         }
         private void refreshMetadataIndex()
         {
@@ -100,7 +114,7 @@ namespace SalesforceOrgManager.View
             root.Name = "mainNode";
             root.Text = ShoppingList.orgUserName;
             root.Tag = "_STRUCTURE";
-            this.treeView.Nodes.Add(root);
+            treeView.Nodes.Add(root);
 
             // Populate class nodes
             List<ApexClassStub> allClasses = Program.retrieveClasses();
@@ -235,19 +249,171 @@ namespace SalesforceOrgManager.View
                 }
             }
         }
+        private TreeNode refreshMetadataIndexAsync()
+        {
+            // start off by adding a base treeview node 
+            TreeNode root = new TreeNode();
+            root.Name = "mainNode";
+            root.Text = ShoppingList.orgUserName;
+            root.Tag = "_STRUCTURE";
+
+            // Populate class nodes
+            List<ApexClassStub> allClasses = Program.retrieveClasses();
+            if (allClasses.Count > 0)
+            {
+                // Init class nodes
+                TreeNode classRoot = new TreeNode();
+                classRoot.Name = "ApexClass";
+                classRoot.Text = "ApexClass";
+                classRoot.ForeColor = (ShoppingList.projectClasses.Count > 0) ? Color.Blue : classRoot.ForeColor;
+                root.Nodes.Add(classRoot);
+
+                foreach (ApexClassStub stub in allClasses)
+                {
+                    TreeNode classNode = new TreeNode();
+                    classNode.Name = stub.Id;
+                    classNode.Text = stub.Name;
+                    classNode.Tag = stub;
+                    classNode.Checked = (ShoppingList.projectClasses.Contains(stub.Name) ? true : false);
+                    classNode.ForeColor = (ShoppingList.projectClasses.Contains(stub.Name) ? Color.Blue : classNode.ForeColor);
+                    classRoot.Nodes.Add(classNode);
+                }
+            }
+            // Populate page nodes
+            List<ApexPageStub> allPages = Program.retrievePages();
+            if (allPages.Count > 0)
+            {
+                // Init page nodes
+                TreeNode pageRoot = new TreeNode();
+                pageRoot.Name = "ApexPage";
+                pageRoot.Text = "ApexPage";
+                pageRoot.ForeColor = (ShoppingList.projectPages.Count > 0) ? Color.Blue : pageRoot.ForeColor;
+                root.Nodes.Add(pageRoot);
+
+                foreach (ApexPageStub stub in allPages)
+                {
+                    TreeNode pageNode = new TreeNode();
+                    pageNode.Name = stub.Id;
+                    pageNode.Text = stub.Name;
+                    pageNode.Tag = stub;
+                    pageNode.Checked = (ShoppingList.projectPages.Contains(stub.Name) ? true : false);
+                    pageNode.ForeColor = (ShoppingList.projectPages.Contains(stub.Name) ? Color.Blue : pageNode.ForeColor);
+                    pageRoot.Nodes.Add(pageNode);
+                }
+            }
+            // Populate trigger nodes
+            List<ApexTriggerStub> allTriggers = Program.retrieveTriggers();
+            if (allTriggers.Count > 0)
+            {
+                // Init trigger nodes
+                TreeNode triggerRoot = new TreeNode();
+                triggerRoot.Name = "ApexTrigger";
+                triggerRoot.Text = "ApexTrigger";
+                triggerRoot.ForeColor = (ShoppingList.projectTriggers.Count > 0) ? Color.Blue : triggerRoot.ForeColor;
+                root.Nodes.Add(triggerRoot);
+
+                foreach (ApexTriggerStub stub in allTriggers)
+                {
+                    TreeNode triggerNode = new TreeNode();
+                    triggerNode.Name = stub.Id;
+                    triggerNode.Text = stub.Name;
+                    triggerNode.Tag = stub;
+                    triggerNode.Checked = (ShoppingList.projectTriggers.Contains(stub.Name) ? true : false);
+                    triggerNode.ForeColor = (ShoppingList.projectTriggers.Contains(stub.Name) ? Color.Blue : triggerNode.ForeColor);
+                    triggerRoot.Nodes.Add(triggerNode);
+                }
+            }
+            // Populate static resource nodes
+            List<ApexStaticResourceStub> allResources = Program.retrieveStaticResources();
+            if (allResources.Count > 0)
+            {
+                // Init trigger nodes
+                TreeNode staticResourceRoot = new TreeNode();
+                staticResourceRoot.Name = "StaticResource";
+                staticResourceRoot.Text = "StaticResource";
+                staticResourceRoot.ForeColor = (ShoppingList.projectStaticResources.Count > 0) ? Color.Blue : staticResourceRoot.ForeColor;
+                root.Nodes.Add(staticResourceRoot);
+
+                foreach (ApexStaticResourceStub stub in allResources)
+                {
+                    TreeNode staticResourceNode = new TreeNode();
+                    staticResourceNode.Name = stub.Id;
+                    staticResourceNode.Text = stub.Name;
+                    staticResourceNode.Tag = stub;
+                    staticResourceNode.Checked = (ShoppingList.projectStaticResources.Contains(stub.Name) ? true : false);
+                    staticResourceNode.ForeColor = (ShoppingList.projectStaticResources.Contains(stub.Name) ? Color.Blue : staticResourceNode.ForeColor);
+                    staticResourceRoot.Nodes.Add(staticResourceNode);
+                }
+            }
+            // Populate lightning apps
+            List<LightningItemBundle> allLightningItems = Program.retrieveLightningItems();
+            if (allLightningItems.Count > 0)
+            {
+                // Init class nodes
+                TreeNode lightningItemRoot = new TreeNode();
+                lightningItemRoot.Name = "AuraDefinitionBundle";
+                lightningItemRoot.Text = "AuraDefinitionBundle";
+                lightningItemRoot.ForeColor = (ShoppingList.projectLightningItems.Count > 0) ? Color.Blue : lightningItemRoot.ForeColor;
+                root.Nodes.Add(lightningItemRoot);
+
+                foreach (LightningItemBundle stub in allLightningItems)
+                {
+                    TreeNode bundleNode = new TreeNode();
+                    bundleNode.Name = stub.Id;
+                    bundleNode.Text = stub.MasterLabel;
+                    bundleNode.Tag = stub;
+                    bundleNode.Checked = (ShoppingList.projectLightningItems.Contains(stub.MasterLabel) ? true : false);
+                    bundleNode.ForeColor = (ShoppingList.projectLightningItems.Contains(stub.MasterLabel) ? Color.Blue : bundleNode.ForeColor);
+                    lightningItemRoot.Nodes.Add(bundleNode);
+                }
+            }
+            // Populate lightning web components
+            List<LightningWebComponent> allLwc = Program.retrieveLightningWebComponents();
+            if (allLwc.Count > 0)
+            {
+                // Init class nodes
+                TreeNode lwcItemRoot = new TreeNode();
+                lwcItemRoot.Name = "LightningComponentBundle";
+                lwcItemRoot.Text = "LightningComponentBundle";
+                lwcItemRoot.ForeColor = (ShoppingList.projectLwcItems.Count > 0) ? Color.Blue : lwcItemRoot.ForeColor;
+                root.Nodes.Add(lwcItemRoot);
+
+                foreach (LightningWebComponent stub in allLwc)
+                {
+                    TreeNode lwcNode = new TreeNode();
+                    lwcNode.Name = stub.Id;
+                    lwcNode.Text = stub.MasterLabel;
+                    lwcNode.Tag = stub;
+                    lwcNode.Checked = (ShoppingList.projectLwcItems.Contains(stub.MasterLabel) ? true : false);
+                    lwcNode.ForeColor = (ShoppingList.projectLwcItems.Contains(stub.MasterLabel) ? Color.Blue : lwcNode.ForeColor);
+                    lwcItemRoot.Nodes.Add(lwcNode);
+                }
+            }
+            return root;
+        }
         private void btnUpdateProject_Click(object sender, EventArgs e)
         {
             updateProjectProcess();
         }
-        private void updateProjectProcess()
+        private async void updateProjectProcess()
         {
-            updateProject();
-            this.treeView.Nodes.Clear();
-            refreshMetadataIndex();
+            progressBar1.Visible = true;
+            progressBar1.Increment(20);
+            treeView.Visible = false;
+            await Task.Run(() => updateProject());
+            //updateProject();
+            treeView.Nodes.Clear();
+            progressBar1.Increment(50);
+            TreeNode tn = await Task<TreeNode>.Run(() => refreshMetadataIndexAsync());
+            treeView.Nodes.Add(tn);
+            //refreshMetadataIndex();
+            treeView.Visible = true;
+            progressBar1.Visible = false;
+            progressBar1.Value = 0;
         }
         public void updateProjectProcessReverse()
         {
-            this.treeView.Nodes.Clear();
+            treeView.Nodes.Clear();
             refreshMetadataIndex();
             updateProject();
         }
