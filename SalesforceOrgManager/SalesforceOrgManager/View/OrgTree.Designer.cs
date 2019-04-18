@@ -90,10 +90,10 @@
             // 
             this.treeView.CheckBoxes = true;
             this.treeView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeView.Location = new System.Drawing.Point(173, 83);
+            this.treeView.Location = new System.Drawing.Point(177, 83);
             this.treeView.Name = "treeView";
             this.treeView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.treeView.Size = new System.Drawing.Size(458, 562);
+            this.treeView.Size = new System.Drawing.Size(454, 562);
             this.treeView.TabIndex = 0;
             // 
             // btnRefreshMetadata
@@ -162,7 +162,7 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(168, 649);
+            this.tabControl1.Size = new System.Drawing.Size(156, 649);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 5;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.Scheda_Selected);
@@ -182,18 +182,19 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(160, 611);
+            this.tabPage1.Size = new System.Drawing.Size(148, 611);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "M";
             // 
             // btnNewStaticResource
             // 
+            this.btnNewStaticResource.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnNewStaticResource.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewStaticResource.Image = ((System.Drawing.Image)(resources.GetObject("btnNewStaticResource.Image")));
             this.btnNewStaticResource.Location = new System.Drawing.Point(21, 479);
             this.btnNewStaticResource.Name = "btnNewStaticResource";
             this.btnNewStaticResource.Size = new System.Drawing.Size(106, 108);
-            this.btnNewStaticResource.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnNewStaticResource.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnNewStaticResource.TabIndex = 8;
             this.btnNewStaticResource.TabStop = false;
             this.btnNewStaticResource.Click += new System.EventHandler(this.btnNewStaticResource_Click);
@@ -211,13 +212,14 @@
             // 
             // btnNewVisualforce
             // 
+            this.btnNewVisualforce.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnNewVisualforce.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewVisualforce.Image = ((System.Drawing.Image)(resources.GetObject("btnNewVisualforce.Image")));
             this.btnNewVisualforce.Location = new System.Drawing.Point(21, 322);
             this.btnNewVisualforce.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewVisualforce.Name = "btnNewVisualforce";
             this.btnNewVisualforce.Size = new System.Drawing.Size(106, 114);
-            this.btnNewVisualforce.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnNewVisualforce.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnNewVisualforce.TabIndex = 6;
             this.btnNewVisualforce.TabStop = false;
             this.btnNewVisualforce.Click += new System.EventHandler(this.btnNewVisualforce_Click);
@@ -235,13 +237,14 @@
             // 
             // btnNewTrigger
             // 
+            this.btnNewTrigger.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnNewTrigger.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewTrigger.Image = ((System.Drawing.Image)(resources.GetObject("btnNewTrigger.Image")));
             this.btnNewTrigger.Location = new System.Drawing.Point(21, 166);
             this.btnNewTrigger.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewTrigger.Name = "btnNewTrigger";
             this.btnNewTrigger.Size = new System.Drawing.Size(106, 114);
-            this.btnNewTrigger.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnNewTrigger.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnNewTrigger.TabIndex = 4;
             this.btnNewTrigger.TabStop = false;
             this.btnNewTrigger.Click += new System.EventHandler(this.btnNewTrigger_Click);
@@ -270,13 +273,14 @@
             // 
             // btnNewClass
             // 
+            this.btnNewClass.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnNewClass.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewClass.Image = ((System.Drawing.Image)(resources.GetObject("btnNewClass.Image")));
-            this.btnNewClass.Location = new System.Drawing.Point(21, 13);
+            this.btnNewClass.Location = new System.Drawing.Point(25, 22);
             this.btnNewClass.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewClass.Name = "btnNewClass";
-            this.btnNewClass.Size = new System.Drawing.Size(106, 114);
-            this.btnNewClass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnNewClass.Size = new System.Drawing.Size(102, 105);
+            this.btnNewClass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnNewClass.TabIndex = 0;
             this.btnNewClass.TabStop = false;
             this.btnNewClass.Click += new System.EventHandler(this.btnNewClass_Click);
@@ -316,13 +320,14 @@
             // 
             // btnNewLightningInterface
             // 
+            this.btnNewLightningInterface.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnNewLightningInterface.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewLightningInterface.Image = ((System.Drawing.Image)(resources.GetObject("btnNewLightningInterface.Image")));
             this.btnNewLightningInterface.Location = new System.Drawing.Point(20, 468);
             this.btnNewLightningInterface.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewLightningInterface.Name = "btnNewLightningInterface";
             this.btnNewLightningInterface.Size = new System.Drawing.Size(106, 114);
-            this.btnNewLightningInterface.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnNewLightningInterface.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnNewLightningInterface.TabIndex = 8;
             this.btnNewLightningInterface.TabStop = false;
             this.btnNewLightningInterface.Click += new System.EventHandler(this.btnNewLightningInterface_Click);
@@ -340,13 +345,14 @@
             // 
             // btnNewLightEvent
             // 
+            this.btnNewLightEvent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnNewLightEvent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewLightEvent.Image = ((System.Drawing.Image)(resources.GetObject("btnNewLightEvent.Image")));
             this.btnNewLightEvent.Location = new System.Drawing.Point(21, 311);
             this.btnNewLightEvent.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewLightEvent.Name = "btnNewLightEvent";
             this.btnNewLightEvent.Size = new System.Drawing.Size(106, 114);
-            this.btnNewLightEvent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnNewLightEvent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnNewLightEvent.TabIndex = 6;
             this.btnNewLightEvent.TabStop = false;
             this.btnNewLightEvent.Click += new System.EventHandler(this.btnNewLightEvent_Click);
@@ -364,13 +370,14 @@
             // 
             // btnNewLightComponent
             // 
+            this.btnNewLightComponent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnNewLightComponent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewLightComponent.Image = ((System.Drawing.Image)(resources.GetObject("btnNewLightComponent.Image")));
             this.btnNewLightComponent.Location = new System.Drawing.Point(21, 158);
             this.btnNewLightComponent.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewLightComponent.Name = "btnNewLightComponent";
             this.btnNewLightComponent.Size = new System.Drawing.Size(106, 114);
-            this.btnNewLightComponent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnNewLightComponent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnNewLightComponent.TabIndex = 4;
             this.btnNewLightComponent.TabStop = false;
             this.btnNewLightComponent.Click += new System.EventHandler(this.btnNewLightComponent_Click);
@@ -388,13 +395,14 @@
             // 
             // btnNewLightApp
             // 
+            this.btnNewLightApp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnNewLightApp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewLightApp.Image = ((System.Drawing.Image)(resources.GetObject("btnNewLightApp.Image")));
             this.btnNewLightApp.Location = new System.Drawing.Point(21, 13);
             this.btnNewLightApp.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewLightApp.Name = "btnNewLightApp";
             this.btnNewLightApp.Size = new System.Drawing.Size(106, 114);
-            this.btnNewLightApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnNewLightApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnNewLightApp.TabIndex = 2;
             this.btnNewLightApp.TabStop = false;
             this.btnNewLightApp.Click += new System.EventHandler(this.btnNewLightApp_Click);
@@ -426,13 +434,14 @@
             // 
             // btnDebugLogs
             // 
+            this.btnDebugLogs.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnDebugLogs.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDebugLogs.Image = ((System.Drawing.Image)(resources.GetObject("btnDebugLogs.Image")));
             this.btnDebugLogs.Location = new System.Drawing.Point(18, 177);
             this.btnDebugLogs.Margin = new System.Windows.Forms.Padding(2);
             this.btnDebugLogs.Name = "btnDebugLogs";
             this.btnDebugLogs.Size = new System.Drawing.Size(106, 114);
-            this.btnDebugLogs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnDebugLogs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnDebugLogs.TabIndex = 12;
             this.btnDebugLogs.TabStop = false;
             this.btnDebugLogs.Click += new System.EventHandler(this.btnDebugLogs_Click);
@@ -450,13 +459,14 @@
             // 
             // btnExecuteApex
             // 
+            this.btnExecuteApex.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnExecuteApex.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExecuteApex.Image = ((System.Drawing.Image)(resources.GetObject("btnExecuteApex.Image")));
             this.btnExecuteApex.Location = new System.Drawing.Point(18, 18);
             this.btnExecuteApex.Margin = new System.Windows.Forms.Padding(2);
             this.btnExecuteApex.Name = "btnExecuteApex";
             this.btnExecuteApex.Size = new System.Drawing.Size(106, 114);
-            this.btnExecuteApex.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnExecuteApex.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnExecuteApex.TabIndex = 10;
             this.btnExecuteApex.TabStop = false;
             this.btnExecuteApex.Click += new System.EventHandler(this.btnExecuteApex_Click);
@@ -490,6 +500,7 @@
             // 
             // btnApiUsage
             // 
+            this.btnApiUsage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnApiUsage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnApiUsage.Image = ((System.Drawing.Image)(resources.GetObject("btnApiUsage.Image")));
             this.btnApiUsage.Location = new System.Drawing.Point(18, 333);
@@ -514,6 +525,7 @@
             // 
             // btnDeployToServer
             // 
+            this.btnDeployToServer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnDeployToServer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeployToServer.Image = ((System.Drawing.Image)(resources.GetObject("btnDeployToServer.Image")));
             this.btnDeployToServer.Location = new System.Drawing.Point(18, 170);
@@ -538,6 +550,7 @@
             // 
             // btnDeployConnections
             // 
+            this.btnDeployConnections.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnDeployConnections.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeployConnections.Image = ((System.Drawing.Image)(resources.GetObject("btnDeployConnections.Image")));
             this.btnDeployConnections.Location = new System.Drawing.Point(18, 16);
@@ -554,7 +567,7 @@
             this.progressBar1.Location = new System.Drawing.Point(236, 257);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(356, 23);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar1.TabIndex = 6;
             this.progressBar1.Visible = false;
             // 

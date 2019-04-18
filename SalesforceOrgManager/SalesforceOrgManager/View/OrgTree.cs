@@ -91,21 +91,17 @@ namespace SalesforceOrgManager.View
         // PROJECT CONTENT METHODS -- START ---------------------
         private void btnRefreshMetadata_Click(object sender, EventArgs e)
         {
-            //treeView.Nodes.Clear();
-            //refreshMetadataIndex();
+            progressBar1.Visible = true;
+            treeView.Visible = false;
             refreshMetadataIndexAsyncCaller();
         }
         private async void refreshMetadataIndexAsyncCaller()
         {
-            progressBar1.Visible = true;
-            progressBar1.Increment(50);
-            treeView.Visible = false;
             treeView.Nodes.Clear();
             TreeNode tn = await Task<TreeNode>.Run(() => refreshMetadataIndexAsync());
             treeView.Nodes.Add(tn);
             treeView.Visible = true;
             progressBar1.Visible = false;
-            progressBar1.Value = 0;
         }
         private void refreshMetadataIndex()
         {
@@ -393,29 +389,22 @@ namespace SalesforceOrgManager.View
         }
         private void btnUpdateProject_Click(object sender, EventArgs e)
         {
+            progressBar1.Visible = true;
+            treeView.Visible = false;
             updateProjectProcess();
         }
         private async void updateProjectProcess()
         {
             progressBar1.Visible = true;
-            progressBar1.Increment(20);
             treeView.Visible = false;
             await Task.Run(() => updateProject());
-            //updateProject();
-            treeView.Nodes.Clear();
-            progressBar1.Increment(50);
-            TreeNode tn = await Task<TreeNode>.Run(() => refreshMetadataIndexAsync());
-            treeView.Nodes.Add(tn);
-            //refreshMetadataIndex();
-            treeView.Visible = true;
-            progressBar1.Visible = false;
-            progressBar1.Value = 0;
+            refreshMetadataIndexAsyncCaller();
         }
         public void updateProjectProcessReverse()
         {
-            treeView.Nodes.Clear();
-            refreshMetadataIndex();
-            updateProject();
+            progressBar1.Visible = true;
+            treeView.Visible = false;
+            refreshMetadataIndexAsyncCaller();
         }
         private void updateProject()
         {
@@ -574,10 +563,14 @@ namespace SalesforceOrgManager.View
             BoxExecuteAnonymous bea = new BoxExecuteAnonymous();
             bea.Show();
         }
-        private void btnDebugLogs_Click(object sender, EventArgs e)
+        private async void btnDebugLogs_Click(object sender, EventArgs e)
         {
-            BoxShowLogs bsl = new BoxShowLogs();
+            progressBar1.Visible = true;
+            BoxShowLogs bsl = await Task<BoxShowLogs>.Run(() => new BoxShowLogs());
             bsl.Show();
+            progressBar1.Visible = false;
+            //BoxShowLogs bsl = new BoxShowLogs();
+            //bsl.Show();
         }
         private void btnApiUsage_Click(object sender, EventArgs e)
         {

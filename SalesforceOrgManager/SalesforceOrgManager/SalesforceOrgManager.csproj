@@ -247,6 +247,16 @@
     <Content Include="img\generalSettings.ico" />
     <Content Include="img\gun.png" />
     <Content Include="img\newclass.png" />
+    <Content Include="img\poses1.png" />
+    <Content Include="img\poses10.png" />
+    <Content Include="img\poses2.png" />
+    <Content Include="img\poses3.png" />
+    <Content Include="img\poses4.png" />
+    <Content Include="img\poses5.png" />
+    <Content Include="img\poses6.png" />
+    <Content Include="img\poses7.png" />
+    <Content Include="img\poses8.png" />
+    <Content Include="img\poses9.png" />
     <Content Include="img\settings.png" />
     <Content Include="img\shopping.ico" />
     <Content Include="img\smartphone.png" />
