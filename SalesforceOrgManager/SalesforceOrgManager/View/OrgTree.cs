@@ -569,8 +569,6 @@ namespace SalesforceOrgManager.View
             BoxShowLogs bsl = await Task<BoxShowLogs>.Run(() => new BoxShowLogs());
             bsl.Show();
             progressBar1.Visible = false;
-            //BoxShowLogs bsl = new BoxShowLogs();
-            //bsl.Show();
         }
         private void btnApiUsage_Click(object sender, EventArgs e)
         {
