@@ -34,5 +34,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	- Manage logins LOGIN GROUP
 	- Create new LOGIN
 	- Delete LOGIN
-	- Set LOGIN as default for org connection
+	- Set LOGIN as default for work session
 	
