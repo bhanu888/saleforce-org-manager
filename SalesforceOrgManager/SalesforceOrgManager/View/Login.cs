@@ -102,6 +102,7 @@ namespace SalesforceOrgManager.View
                 {
                     Program.createNewProject();
                     Program.createManifestForNewProject();
+                    Directory.CreateDirectory(ShoppingList.projectRootDir + "\\config");
                 }
                 // Write login credentials to project
                 Dictionary<string, object> credRecord = new Dictionary<string, object>();

@@ -188,7 +188,6 @@
             // 
             // btnNewStaticResource
             // 
-            this.btnNewStaticResource.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnNewStaticResource.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewStaticResource.Image = ((System.Drawing.Image)(resources.GetObject("btnNewStaticResource.Image")));
             this.btnNewStaticResource.Location = new System.Drawing.Point(21, 479);
@@ -212,7 +211,6 @@
             // 
             // btnNewVisualforce
             // 
-            this.btnNewVisualforce.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnNewVisualforce.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewVisualforce.Image = ((System.Drawing.Image)(resources.GetObject("btnNewVisualforce.Image")));
             this.btnNewVisualforce.Location = new System.Drawing.Point(21, 322);
@@ -237,7 +235,6 @@
             // 
             // btnNewTrigger
             // 
-            this.btnNewTrigger.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnNewTrigger.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewTrigger.Image = ((System.Drawing.Image)(resources.GetObject("btnNewTrigger.Image")));
             this.btnNewTrigger.Location = new System.Drawing.Point(21, 166);
@@ -273,7 +270,6 @@
             // 
             // btnNewClass
             // 
-            this.btnNewClass.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnNewClass.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewClass.Image = ((System.Drawing.Image)(resources.GetObject("btnNewClass.Image")));
             this.btnNewClass.Location = new System.Drawing.Point(25, 22);
@@ -303,7 +299,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Size = new System.Drawing.Size(160, 611);
+            this.tabPage2.Size = new System.Drawing.Size(148, 611);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "L";
             // 
@@ -320,7 +316,6 @@
             // 
             // btnNewLightningInterface
             // 
-            this.btnNewLightningInterface.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnNewLightningInterface.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewLightningInterface.Image = ((System.Drawing.Image)(resources.GetObject("btnNewLightningInterface.Image")));
             this.btnNewLightningInterface.Location = new System.Drawing.Point(20, 468);
@@ -345,7 +340,6 @@
             // 
             // btnNewLightEvent
             // 
-            this.btnNewLightEvent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnNewLightEvent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewLightEvent.Image = ((System.Drawing.Image)(resources.GetObject("btnNewLightEvent.Image")));
             this.btnNewLightEvent.Location = new System.Drawing.Point(21, 311);
@@ -370,7 +364,6 @@
             // 
             // btnNewLightComponent
             // 
-            this.btnNewLightComponent.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnNewLightComponent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewLightComponent.Image = ((System.Drawing.Image)(resources.GetObject("btnNewLightComponent.Image")));
             this.btnNewLightComponent.Location = new System.Drawing.Point(21, 158);
@@ -395,7 +388,6 @@
             // 
             // btnNewLightApp
             // 
-            this.btnNewLightApp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnNewLightApp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewLightApp.Image = ((System.Drawing.Image)(resources.GetObject("btnNewLightApp.Image")));
             this.btnNewLightApp.Location = new System.Drawing.Point(21, 13);
@@ -417,7 +409,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(160, 611);
+            this.tabPage3.Size = new System.Drawing.Size(148, 611);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "T";
             // 
@@ -434,7 +426,6 @@
             // 
             // btnDebugLogs
             // 
-            this.btnDebugLogs.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnDebugLogs.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDebugLogs.Image = ((System.Drawing.Image)(resources.GetObject("btnDebugLogs.Image")));
             this.btnDebugLogs.Location = new System.Drawing.Point(18, 177);
@@ -459,7 +450,6 @@
             // 
             // btnExecuteApex
             // 
-            this.btnExecuteApex.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnExecuteApex.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExecuteApex.Image = ((System.Drawing.Image)(resources.GetObject("btnExecuteApex.Image")));
             this.btnExecuteApex.Location = new System.Drawing.Point(18, 18);
@@ -483,7 +473,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 34);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(160, 611);
+            this.tabPage4.Size = new System.Drawing.Size(148, 611);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "D";
             // 
