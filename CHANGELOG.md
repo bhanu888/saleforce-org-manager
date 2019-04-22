@@ -29,3 +29,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	- Add new workspace
 	- Remove workspace
 	- Default metadata for new project
+	- Create new LOGIN GROUP
+	- Delete LOGIN GROUP
+	- Manage logins LOGIN GROUP
+	- Create new LOGIN
+	- Delete LOGIN
+	- Set LOGIN as default for org connection
+	
