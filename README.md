@@ -14,7 +14,7 @@ The purpose of this tool is to offer **a comfortable alternative to create and e
 
 Get to the [Getting Started](https://github.com/mzisa/saleforce-org-manager/wiki/01-Getting-started) page to find out!
 
-##Contribute
+## Contribute
 Please do contribute! Issues and pull requests are welcome.
 
 Thank you for your help improving software one changelog at a time!
