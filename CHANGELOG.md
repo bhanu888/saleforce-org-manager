@@ -25,7 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Execute Anonymous Apex
 - View latest 50 debug logs
 - View SFDC Api Usage
-- Setting section: Add new workspace
-- Setting section: Remove workspace
-- Setting section: Default metadata for new project
-- Setting section: Add new workspace
+- Setting section
+	- Add new workspace
+	- Remove workspace
+	- Default metadata for new project
