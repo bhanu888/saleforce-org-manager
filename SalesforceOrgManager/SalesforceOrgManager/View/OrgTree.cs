@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SalesforceOrgManager.Model;
@@ -392,20 +393,19 @@ namespace SalesforceOrgManager.View
             treeView.Visible = false;
             updateProjectProcess();
         }
-        private async void updateProjectProcess()
+        public async void updateProjectProcess()
         {
             progressBar1.Visible = true;
             treeView.Visible = false;
             await Task.Run(() => updateProject());
             refreshMetadataIndexAsyncCaller();
         }
-        public void updateProjectProcessReverse()
+        public void updateProjectProcessReverse(object nodeResult)
         {
-            progressBar1.Visible = true;
-            treeView.Visible = false;
-            refreshMetadataIndexAsyncCaller();
+            updateProject(nodeResult);
+            treeView.Sort();
         }
-        private void updateProject()
+        private void updateProject([Optional] object nodeResult)
         {
             // Get root node, class node, page node
             TreeNode rootNode = treeView.Nodes["mainNode"];
@@ -416,6 +416,64 @@ namespace SalesforceOrgManager.View
             TreeNode staticResourceRootNode = rootNode.Nodes["StaticResource"];
             TreeNode bundleRootNode = rootNode.Nodes["AuraDefinitionBundle"];
             TreeNode lwcRootNode = rootNode.Nodes["LightningComponentBundle"];
+
+            if (nodeResult != null)
+            {
+                if (nodeResult.GetType() == typeof(ApexClassStub)) {
+                    ApexClassStub tmpResult = nodeResult as ApexClassStub;
+                    TreeNode classNode = new TreeNode();
+                    classNode.Name = tmpResult.Id;
+                    classNode.Text = tmpResult.Name;
+                    classNode.Tag = nodeResult;
+                    classNode.Checked = true;
+                    classNode.ForeColor = Color.Blue;
+                    classRootNode.Nodes.Add(classNode);
+                }
+                if (nodeResult.GetType() == typeof(ApexPageStub))
+                {
+                    ApexPageStub tmpResult = nodeResult as ApexPageStub;
+                    TreeNode pageNode = new TreeNode();
+                    pageNode.Name = tmpResult.Id;
+                    pageNode.Text = tmpResult.Name;
+                    pageNode.Tag = tmpResult;
+                    pageNode.Checked = true;
+                    pageNode.ForeColor = Color.Blue;
+                    pageRootNode.Nodes.Add(pageNode);
+                }
+                if (nodeResult.GetType() == typeof(ApexTriggerStub))
+                {
+                    ApexTriggerStub tmpResult = nodeResult as ApexTriggerStub;
+                    TreeNode triggerNode = new TreeNode();
+                    triggerNode.Name = tmpResult.Id;
+                    triggerNode.Text = tmpResult.Name;
+                    triggerNode.Tag = tmpResult;
+                    triggerNode.Checked = true;
+                    triggerNode.ForeColor = Color.Blue;
+                    triggerRootNode.Nodes.Add(triggerNode);
+                }
+                if (nodeResult.GetType() == typeof(ApexStaticResourceStub))
+                {
+                    ApexStaticResourceStub tmpResult = nodeResult as ApexStaticResourceStub;
+                    TreeNode staticResourceNode = new TreeNode();
+                    staticResourceNode.Name = tmpResult.Id;
+                    staticResourceNode.Text = tmpResult.Name;
+                    staticResourceNode.Tag = tmpResult;
+                    staticResourceNode.Checked = true;
+                    staticResourceNode.ForeColor = Color.Blue;
+                    staticResourceRootNode.Nodes.Add(staticResourceNode);
+                }
+                if (nodeResult.GetType() == typeof(LightningItemBundle))
+                {
+                    LightningItemBundle tmpResult = nodeResult as LightningItemBundle;
+                    TreeNode bundleNode = new TreeNode();
+                    bundleNode.Name = tmpResult.Id;
+                    bundleNode.Text = tmpResult.MasterLabel;
+                    bundleNode.Tag = tmpResult;
+                    bundleNode.Checked = true;
+                    bundleNode.ForeColor = Color.Blue;
+                    bundleRootNode.Nodes.Add(bundleNode);
+                }
+            }
 
             // Get class names, page names from SF org
             List<ApexClassStub> selectedClasses = new List<ApexClassStub>();

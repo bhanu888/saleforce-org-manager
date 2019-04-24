@@ -699,6 +699,7 @@ namespace SalesforceOrgManager
         public static async Task createApexClassAsync(View.BoxCreazioneClasse bc)
         {
             String operationResult = "";
+            String clsName = bc.txtItemName.Text;
             ApexClass1 theNewClass = new ApexClass1();
             theNewClass.Body = "public with sharing class " + bc.txtItemName.Text + "{\n // TODO implemententation\n}";
             ApexClass1[] classes = {theNewClass};
@@ -717,8 +718,12 @@ namespace SalesforceOrgManager
             bc.txtLog.Text = operationResult;
             await Task.Delay(3000);
             bc.Close();
-            ShoppingList.projectClasses.Add(bc.txtItemName.Text);
-            ShoppingList.orgTreePointer.updateProjectProcessReverse();
+            if (result[0].errors == null)
+            {
+                ShoppingList.projectClasses.Add(bc.txtItemName.Text);
+                ApexClassStub acs = new ApexClassStub(result[0].id, clsName, theNewClass.Body, false);
+                ShoppingList.orgTreePointer.updateProjectProcessReverse(acs);
+            }
         }
         public static async Task createApexPageAsync(View.BoxCreazioneVisualforce bc)
         {
@@ -744,7 +749,8 @@ namespace SalesforceOrgManager
             await Task.Delay(3000);
             bc.Close();
             ShoppingList.projectPages.Add(bc.txtItemName.Text);
-            ShoppingList.orgTreePointer.updateProjectProcessReverse();
+            ApexPageStub aps = new ApexPageStub(result[0].id, theNewPage.Name, theNewPage.Markup);
+            ShoppingList.orgTreePointer.updateProjectProcessReverse(aps);
         }
         public static async Task createApexTriggerAsync(View.BoxCreazioneTrigger bc)
         {
@@ -777,7 +783,8 @@ namespace SalesforceOrgManager
             await Task.Delay(3000);
             bc.Close();
             ShoppingList.projectTriggers.Add(bc.txtItemName.Text);
-            ShoppingList.orgTreePointer.updateProjectProcessReverse();
+            ApexTriggerStub ats = new ApexTriggerStub(result[0].id, theNewTrigger.Name, theNewTrigger.Body);
+            ShoppingList.orgTreePointer.updateProjectProcessReverse(ats);
         }
         public static async Task createApexStaticResourceAsync(View.BoxCreazioneRisorsaStatica bc)
         {
@@ -824,7 +831,10 @@ namespace SalesforceOrgManager
             await Task.Delay(3000);
             bc.Close();
             ShoppingList.projectStaticResources.Add(bc.txtItemName.Text);
-            ShoppingList.orgTreePointer.updateProjectProcessReverse();
+            ApexStaticResourceStub ars = new ApexStaticResourceStub(result[0].id, 
+                theNewResource.Name, theNewResource.Body.ToString(), theNewResource.CacheControl, 
+                theNewResource.ContentType, theNewResource.Description, bc.chkSingleFile.Checked);
+            ShoppingList.orgTreePointer.updateProjectProcessReverse(ars);
         }
         public static async Task createLightningItemAsync(View.BoxCreazioneLightning bc, string itemType)
         {
@@ -868,13 +878,23 @@ namespace SalesforceOrgManager
                 errorOccurred = true;
             }
             bc.txtLog.Text = operationResult + operationLog;
-            await Task.Delay(3000);
-            bc.Close();
 
             if (!errorOccurred)
             {
+                AuraDefinitionBundle1 theAuraBundle = new AuraDefinitionBundle1();
+                theAuraBundle.ApiVersion = Convert.ToDouble(bc.cmbVersions.SelectedItem);
+                theAuraBundle.ApiVersionSpecified = true;
+                theAuraBundle.DeveloperName = Convert.ToString(bc.txtItemName.Text);
+                theAuraBundle.MasterLabel = Convert.ToString(bc.txtItemName.Text);
+                theAuraBundle.Description = Convert.ToString(bc.txtItemDescription.Text);
+
                 ShoppingList.projectLightningItems.Add(bc.txtItemName.Text);
-                ShoppingList.orgTreePointer.updateProjectProcessReverse();
+                LightningItemBundle lim = new LightningItemBundle(result.id, 
+                    Convert.ToDouble(bc.cmbVersions.SelectedItem), Convert.ToString(bc.txtItemName.Text),
+                    Convert.ToString(bc.txtItemName.Text), Convert.ToString(bc.txtItemDescription.Text));
+                await Task.Delay(3000);
+                bc.Close();
+                ShoppingList.orgTreePointer.updateProjectProcessReverse(lim);
             }
         }
         private static SfTooling.com.salesforce.tooling.SaveResult createLightningBundle(View.BoxCreazioneLightning bc)

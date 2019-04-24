@@ -8,7 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix DEPLOY TO SERVER functionality
 - Check for unexisting workspaces at startup
 - Implement local cache for metadata to boost performance on large ORGs
-- Creating a new metadata on the ORG should publish it on the local project contextually
+
+## [1.1.0] - 2019-04-24
+### Changed
+- Creating a new metadata on the ORG  publish it on the local project contextually now
 
 ## [1.0.1] - 2019-04-24
 ### Changed
