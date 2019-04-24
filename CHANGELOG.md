@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix DEPLOY TO SERVER functionality
 - Check for unexisting workspaces at startup
 - Implement local cache for metadata to boost performance on large ORGs
+- Encrypt org credentials of the keystore
 
 ## [1.1.0] - 2019-04-24
 ### Changed
