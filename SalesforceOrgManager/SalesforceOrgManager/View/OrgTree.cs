@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SalesforceOrgManager.Model;
@@ -558,11 +557,6 @@ namespace SalesforceOrgManager.View
         //----------- LIGHTNING ITEMS -- END ---------
 
         // TREEVIEW UTILITY METHODS -- START ---------------------
-        private void btnExecuteApex_Click(object sender, EventArgs e)
-        {
-            BoxExecuteAnonymous bea = new BoxExecuteAnonymous();
-            bea.Show();
-        }
         private async void btnDebugLogs_Click(object sender, EventArgs e)
         {
             progressBar1.Visible = true;
@@ -583,10 +577,6 @@ namespace SalesforceOrgManager.View
         // TREEVIEW UTILITY METHODS -- EBD ---------------------
 
         //----------- TBD ----------------------- START -------------
-        private void btnDeployConnections_Click(object sender, EventArgs e)
-        {
-            //TBD
-        }
         //----------- TBD ----------------------- END -------------
 
         //----------- NON UTILIZZATI: DA DISMETTERE (?) START ---------
@@ -597,6 +587,11 @@ namespace SalesforceOrgManager.View
                 treeNode = treeNode.Parent;
             }
             return treeNode;
+        }
+        private void btnExecuteApex_Click(object sender, EventArgs e)
+        {
+            BoxExecuteAnonymous bea = new BoxExecuteAnonymous();
+            bea.Show();
         }
         //----------- NON UTILIZZATI: DA DISMETTERE (?) END ---------
     }

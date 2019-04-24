@@ -63,4 +63,3 @@ C:\Users\zisa\Google_Drive\Progetti\github\Som\SalesforceOrgManager\SalesforceOr
 C:\Users\zisa\Google_Drive\Progetti\github\Som\SalesforceOrgManager\SalesforceOrgManager\obj\Debug\SalesforceOrgManager.csproj.CopyComplete
 C:\Users\zisa\Google_Drive\Progetti\github\Som\SalesforceOrgManager\SalesforceOrgManager\obj\Debug\SalesforceOrgManager.exe
 C:\Users\zisa\Google_Drive\Progetti\github\Som\SalesforceOrgManager\SalesforceOrgManager\obj\Debug\SalesforceOrgManager.pdb
-C:\Users\zisa\Google_Drive\Progetti\github\Som\SalesforceOrgManager\SalesforceOrgManager\obj\Debug\SalesforceOrgManager.csprojAssemblyReference.cache

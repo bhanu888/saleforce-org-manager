@@ -40,7 +40,7 @@
             // 
             this.dataGridLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridLogs.Location = new System.Drawing.Point(9, 25);
-            this.dataGridLogs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridLogs.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridLogs.Name = "dataGridLogs";
             this.dataGridLogs.RowTemplate.Height = 24;
             this.dataGridLogs.Size = new System.Drawing.Size(718, 545);
@@ -63,7 +63,7 @@
             this.txtExecutionLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtExecutionLog.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtExecutionLog.Location = new System.Drawing.Point(750, 25);
-            this.txtExecutionLog.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtExecutionLog.Margin = new System.Windows.Forms.Padding(2);
             this.txtExecutionLog.Multiline = true;
             this.txtExecutionLog.Name = "txtExecutionLog";
             this.txtExecutionLog.ReadOnly = true;
@@ -93,7 +93,8 @@
             this.Controls.Add(this.txtExecutionLog);
             this.Controls.Add(this.dataGridLogs);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "BoxShowLogs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Show top 50 debug logs";

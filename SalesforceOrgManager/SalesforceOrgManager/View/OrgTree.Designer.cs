@@ -57,15 +57,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnDebugLogs = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnExecuteApex = new System.Windows.Forms.PictureBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label14 = new System.Windows.Forms.Label();
             this.btnApiUsage = new System.Windows.Forms.PictureBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label12 = new System.Windows.Forms.Label();
             this.btnDeployToServer = new System.Windows.Forms.PictureBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.btnDeployConnections = new System.Windows.Forms.PictureBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnNewStaticResource)).BeginInit();
@@ -79,11 +74,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnNewLightApp)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnDebugLogs)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExecuteApex)).BeginInit();
-            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnApiUsage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDeployToServer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDeployConnections)).BeginInit();
             this.SuspendLayout();
             // 
             // treeView
@@ -153,7 +145,6 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControl1.ItemSize = new System.Drawing.Size(25, 30);
@@ -402,10 +393,12 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.tabPage3.Controls.Add(this.label12);
+            this.tabPage3.Controls.Add(this.btnDeployToServer);
             this.tabPage3.Controls.Add(this.label9);
             this.tabPage3.Controls.Add(this.btnDebugLogs);
             this.tabPage3.Controls.Add(this.label10);
-            this.tabPage3.Controls.Add(this.btnExecuteApex);
+            this.tabPage3.Controls.Add(this.btnApiUsage);
             this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
@@ -417,7 +410,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(35, 292);
+            this.label9.Location = new System.Drawing.Point(31, 131);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(86, 15);
@@ -428,7 +421,7 @@
             // 
             this.btnDebugLogs.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDebugLogs.Image = ((System.Drawing.Image)(resources.GetObject("btnDebugLogs.Image")));
-            this.btnDebugLogs.Location = new System.Drawing.Point(18, 177);
+            this.btnDebugLogs.Location = new System.Drawing.Point(20, 15);
             this.btnDebugLogs.Margin = new System.Windows.Forms.Padding(2);
             this.btnDebugLogs.Name = "btnDebugLogs";
             this.btnDebugLogs.Size = new System.Drawing.Size(106, 114);
@@ -441,116 +434,25 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(25, 135);
+            this.label10.Location = new System.Drawing.Point(40, 307);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 15);
+            this.label10.Size = new System.Drawing.Size(69, 15);
             this.label10.TabIndex = 11;
-            this.label10.Text = "EXECUTE APEX";
-            // 
-            // btnExecuteApex
-            // 
-            this.btnExecuteApex.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExecuteApex.Image = ((System.Drawing.Image)(resources.GetObject("btnExecuteApex.Image")));
-            this.btnExecuteApex.Location = new System.Drawing.Point(18, 18);
-            this.btnExecuteApex.Margin = new System.Windows.Forms.Padding(2);
-            this.btnExecuteApex.Name = "btnExecuteApex";
-            this.btnExecuteApex.Size = new System.Drawing.Size(106, 114);
-            this.btnExecuteApex.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnExecuteApex.TabIndex = 10;
-            this.btnExecuteApex.TabStop = false;
-            this.btnExecuteApex.Click += new System.EventHandler(this.btnExecuteApex_Click);
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.tabPage4.Controls.Add(this.label14);
-            this.tabPage4.Controls.Add(this.btnApiUsage);
-            this.tabPage4.Controls.Add(this.label12);
-            this.tabPage4.Controls.Add(this.btnDeployToServer);
-            this.tabPage4.Controls.Add(this.label13);
-            this.tabPage4.Controls.Add(this.btnDeployConnections);
-            this.tabPage4.Location = new System.Drawing.Point(4, 34);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(148, 611);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "D";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(38, 450);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(69, 15);
-            this.label14.TabIndex = 17;
-            this.label14.Text = "API USAGE";
+            this.label10.Text = "API USAGE";
             // 
             // btnApiUsage
             // 
-            this.btnApiUsage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.btnApiUsage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnApiUsage.Image = ((System.Drawing.Image)(resources.GetObject("btnApiUsage.Image")));
-            this.btnApiUsage.Location = new System.Drawing.Point(18, 333);
+            this.btnApiUsage.Location = new System.Drawing.Point(20, 191);
             this.btnApiUsage.Margin = new System.Windows.Forms.Padding(2);
             this.btnApiUsage.Name = "btnApiUsage";
             this.btnApiUsage.Size = new System.Drawing.Size(106, 114);
-            this.btnApiUsage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnApiUsage.TabIndex = 16;
+            this.btnApiUsage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnApiUsage.TabIndex = 10;
             this.btnApiUsage.TabStop = false;
             this.btnApiUsage.Click += new System.EventHandler(this.btnApiUsage_Click);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(11, 287);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(126, 15);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "DEPLOY TO SERVER";
-            // 
-            // btnDeployToServer
-            // 
-            this.btnDeployToServer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnDeployToServer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeployToServer.Image = ((System.Drawing.Image)(resources.GetObject("btnDeployToServer.Image")));
-            this.btnDeployToServer.Location = new System.Drawing.Point(18, 170);
-            this.btnDeployToServer.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDeployToServer.Name = "btnDeployToServer";
-            this.btnDeployToServer.Size = new System.Drawing.Size(106, 114);
-            this.btnDeployToServer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnDeployToServer.TabIndex = 14;
-            this.btnDeployToServer.TabStop = false;
-            this.btnDeployToServer.Click += new System.EventHandler(this.btnDeployToServer_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(2, 132);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(145, 15);
-            this.label13.TabIndex = 13;
-            this.label13.Text = "DEPLOY CONNECTIONS";
-            // 
-            // btnDeployConnections
-            // 
-            this.btnDeployConnections.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnDeployConnections.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeployConnections.Image = ((System.Drawing.Image)(resources.GetObject("btnDeployConnections.Image")));
-            this.btnDeployConnections.Location = new System.Drawing.Point(18, 16);
-            this.btnDeployConnections.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDeployConnections.Name = "btnDeployConnections";
-            this.btnDeployConnections.Size = new System.Drawing.Size(106, 114);
-            this.btnDeployConnections.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnDeployConnections.TabIndex = 12;
-            this.btnDeployConnections.TabStop = false;
-            this.btnDeployConnections.Click += new System.EventHandler(this.btnDeployConnections_Click);
             // 
             // progressBar1
             // 
@@ -560,6 +462,30 @@
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar1.TabIndex = 6;
             this.progressBar1.Visible = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(10, 479);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(126, 15);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "DEPLOY TO SERVER";
+            // 
+            // btnDeployToServer
+            // 
+            this.btnDeployToServer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeployToServer.Image = ((System.Drawing.Image)(resources.GetObject("btnDeployToServer.Image")));
+            this.btnDeployToServer.Location = new System.Drawing.Point(23, 363);
+            this.btnDeployToServer.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDeployToServer.Name = "btnDeployToServer";
+            this.btnDeployToServer.Size = new System.Drawing.Size(97, 114);
+            this.btnDeployToServer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnDeployToServer.TabIndex = 16;
+            this.btnDeployToServer.TabStop = false;
+            this.btnDeployToServer.Click += new System.EventHandler(this.btnDeployToServer_Click);
             // 
             // OrgTree
             // 
@@ -596,12 +522,8 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnDebugLogs)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExecuteApex)).EndInit();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnApiUsage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDeployToServer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDeployConnections)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -627,7 +549,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox btnNewLightApp;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox btnNewStaticResource;
         private System.Windows.Forms.Label label8;
@@ -635,14 +556,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox btnDebugLogs;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.PictureBox btnExecuteApex;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.PictureBox btnDeployToServer;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.PictureBox btnDeployConnections;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.PictureBox btnApiUsage;
         public System.Windows.Forms.TreeView treeView;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.PictureBox btnApiUsage;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.PictureBox btnDeployToServer;
     }
 }
