@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Implement local cache for metadata to boost performance on large ORGs
 - Encrypt org credentials of the keystore
 
+## [1.1.1] - 2019-04-29
+### Changed
+- Fix on metadata creation and publication on the target ORG
+
+
 ## [1.1.0] - 2019-04-24
 ### Changed
 - Creating a new metadata on the ORG  publish it on the local project contextually now

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using SfTooling.com.salesforce.tooling;
-using System.Web.Services;
 using System.Net;
 using System.IO;
 using System.Web.Script.Serialization;
@@ -11,11 +10,6 @@ using System.Xml;
 using System.Threading.Tasks;
 using System.Linq;
 using System.IO.Compression;
-using System.Threading;
-using System.Web;
-using SfMetadata.com.salesforce.metadata;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace SalesforceOrgManager
 {
@@ -748,9 +742,13 @@ namespace SalesforceOrgManager
             bc.txtLog.Text = operationResult;
             await Task.Delay(3000);
             bc.Close();
-            ShoppingList.projectPages.Add(bc.txtItemName.Text);
-            ApexPageStub aps = new ApexPageStub(result[0].id, theNewPage.Name, theNewPage.Markup);
-            ShoppingList.orgTreePointer.updateProjectProcessReverse(aps);
+
+            if (result[0].errors == null)
+            {
+                ShoppingList.projectPages.Add(bc.txtItemName.Text);
+                ApexPageStub aps = new ApexPageStub(result[0].id, theNewPage.Name, theNewPage.Markup);
+                ShoppingList.orgTreePointer.updateProjectProcessReverse(aps);
+            }
         }
         public static async Task createApexTriggerAsync(View.BoxCreazioneTrigger bc)
         {
@@ -782,9 +780,13 @@ namespace SalesforceOrgManager
             bc.txtLog.Text = operationResult;
             await Task.Delay(3000);
             bc.Close();
-            ShoppingList.projectTriggers.Add(bc.txtItemName.Text);
-            ApexTriggerStub ats = new ApexTriggerStub(result[0].id, theNewTrigger.Name, theNewTrigger.Body);
-            ShoppingList.orgTreePointer.updateProjectProcessReverse(ats);
+
+            if (result[0].errors == null)
+            {
+                ShoppingList.projectTriggers.Add(bc.txtItemName.Text);
+                ApexTriggerStub ats = new ApexTriggerStub(result[0].id, theNewTrigger.Name, theNewTrigger.Body);
+                ShoppingList.orgTreePointer.updateProjectProcessReverse(ats);
+            }
         }
         public static async Task createApexStaticResourceAsync(View.BoxCreazioneRisorsaStatica bc)
         {
@@ -830,11 +832,15 @@ namespace SalesforceOrgManager
             bc.txtLog.Text = operationResult;
             await Task.Delay(3000);
             bc.Close();
-            ShoppingList.projectStaticResources.Add(bc.txtItemName.Text);
-            ApexStaticResourceStub ars = new ApexStaticResourceStub(result[0].id, 
-                theNewResource.Name, theNewResource.Body.ToString(), theNewResource.CacheControl, 
-                theNewResource.ContentType, theNewResource.Description, bc.chkSingleFile.Checked);
-            ShoppingList.orgTreePointer.updateProjectProcessReverse(ars);
+
+            if (result[0].errors == null)
+            {
+                ShoppingList.projectStaticResources.Add(bc.txtItemName.Text);
+                ApexStaticResourceStub ars = new ApexStaticResourceStub(result[0].id,
+                    theNewResource.Name, theNewResource.Body.ToString(), theNewResource.CacheControl,
+                    theNewResource.ContentType, theNewResource.Description, bc.chkSingleFile.Checked);
+                ShoppingList.orgTreePointer.updateProjectProcessReverse(ars);
+            }
         }
         public static async Task createLightningItemAsync(View.BoxCreazioneLightning bc, string itemType)
         {
